@@ -9,6 +9,7 @@ layout: layout
       <li class="active">{{ page.title }}</li>
     </ul>
     <h1 id="post-title">{{ page.title }}</h1>
+    <span id="post-date">{{ page.date | date: "%B %e, %Y" }}</span>
     <div id="tags">
     {% for tag in page.categories %}
       <span class="label">{{ tag }}</span>

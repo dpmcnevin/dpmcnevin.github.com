@@ -24,7 +24,11 @@
 /* Post Pages */
 
 #post-title {
-  margin-bottom: 5px;
+  margin-bottom: 0;
+}
+
+#post-date {
+  color: #888;
 }
 
 #tags {
