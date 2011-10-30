@@ -1,3 +1,22 @@
+/* Index Page */
+
+#posts {
+  list-style: none;
+}
+
+.post-date {
+  float: left;
+  padding-right: 13px;
+  text-align: right;
+  width: 150px;
+}
+
+.post-link {
+  float: left;
+}
+
+/* Post Pages */
+
 #post-title {
   margin-bottom: 5px;
 }
