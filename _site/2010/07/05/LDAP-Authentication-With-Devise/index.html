@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Your Name" />
+    <title>LDAP Authentication With Devise</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Random Rails</a></h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <div class="separator" style="clear: both; text-align: left;">I have been meaning to give <a href="http://github.com/plataformatec/devise">Devise</a> a try for quite a while. This weekend I was finally able to try it out. One of my requirements was to be able to authenticate against an LDAP server. There was a module <a href="http://github.com/cschiewek/devise_ldap_authenticatable">already written</a> to do this for Devise, but it was only for Rails 2.3.8 and I wanted to start new projects in Rails 3, so I set out to fork the project and re-write it as a Rails 3 gem.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Since this was my first experience with Devise, to write a gem, I spent a lot of time in the ruby debugger going line by line in Devise and Warden to see how things worked and why things were breaking, which usually turned out with me making a stupid mistake.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Eventually I was able to finish up, luckily I had already went through the process of creating a gem with a generator, so I was able to add some basic generators to make the setup process easier.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">I made a quick screencast on how to setup a new Rails 3 application and use LDAP authentication:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><object width="640" height="480"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=13105005&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=13105005&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="480"></embed></object><p><a href="http://vimeo.com/13105005">Devise LDAP Authenticatable</a> from <a href="http://vimeo.com/user1060758">Daniel McNevin</a> on <a href="http://vimeo.com">Vimeo</a>.</p></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">There's still a lot to do, including locking, registrations, password changes, testing, making a single sign-on solution, and a lot more. Hopefully this is enough to get people up and running for now, though.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">You can find it on the rails3 branch on github at:&nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><a href="http://github.com/dpmcnevin/devise_ldap_authenticatable">http://github.com/dpmcnevin/devise_ldap_authenticatable</a></div><div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/7616842831210003750-7849847876985430846?l=random-rails.blogspot.com' alt='' /></div>
+  </div>
+</div>
+
+    </section>
+  </body>
+</html>

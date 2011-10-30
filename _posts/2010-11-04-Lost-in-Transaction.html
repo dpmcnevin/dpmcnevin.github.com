@@ -1,0 +1,9 @@
+---           
+layout: post
+title: Lost in Transaction
+date: 2010-11-04 00:00:00 UTC
+comments: false
+categories: rails3 callbacks transactions
+---
+
+I am working on an issue tracking system at work. I built in an API so other systems can create events, but I wanted to make sure to minimize duplicate events, and opted to just add a comment in case the same issue was opened twice (or more.)<br /><br />I started with this test<br /><br /><script src="https://gist.github.com/661909.js?file=issue_test.rb"></script><br /><br />Then wrote this code:<br /><br /><script src="https://gist.github.com/661909.js?file=issue_before.rb"></script><br /><br />But it kept failing, which was weird to me, because it seemed right.. it wasn't until I tried it from the development&nbsp;environment&nbsp;and checked out the logs that I saw what was happening..<br /><br /><script src="https://gist.github.com/661909.js?file=development.log"></script><br /><br />The whole request was being wrapped in a transaction and being rolled back.. A little google searching later, I found <a href="http://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html">after_rollback</a>, and wrote a new callback<br /><br /><script src="https://gist.github.com/661909.js?file=issue_after.rb"></script><br /><br />And now everything is working as intended. So if you run into a similar situation, I hope that this will help out.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/7616842831210003750-1072726240741636397?l=random-rails.blogspot.com' alt='' /></div>

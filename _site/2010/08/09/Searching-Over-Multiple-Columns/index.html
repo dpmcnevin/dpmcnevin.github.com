@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Your Name" />
+    <title>Searching Over Multiple Columns</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Random Rails</a></h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    I am developing an application where I collect system information from various hosts within our network and need to search those hosts. I would like to be able to search across multiple columns using 'or' but then return what matched.<br /><br />The setup is pretty simple, I have a Host model that has_one OperatingSystem<br /><br /><script src="http://gist.github.com/567693.js"> </script><br /><br />For each model, I implement a 'search' class method, and for the OperatingSystem model, I implemented it as such:<br /><br /><script src="http://gist.github.com/567694.js"> </script><br /><br />What this does is construct a query using each value in <code>match_on</code> that says if that field matches the term show that otherwise show null. I then use MySQL's CONCAT_WS method to take each of the fields and combine them separated by a space and name it <code>matched_on</code>. Finally, I use a HAVING clause to filter out results that have a blank value for <code>matched_on</code>.<br /><br />I then use a simple map to set the accessor on the host with what was matched and return the hosts that were matched. <br /><br />I realize that this will only work with MySQL (probably), but since I am using it for development and production on this project that's not an issue, and it feels better than looping through the results again and setting <code>matched_on</code><br /><br />Thanks to <a href="http://stackoverflow.com/questions/2260988/sql-mark-which-where-condition-matched/2261001#2261001">this answer</a> on Stack Overflow for pointing me in the right(?) direction.<div class="blogger-post-footer"><img width='1' height='1' src='https://blogger.googleusercontent.com/tracker/7616842831210003750-2091183387924537947?l=random-rails.blogspot.com' alt='' /></div>
+  </div>
+</div>
+
+    </section>
+  </body>
+</html>
