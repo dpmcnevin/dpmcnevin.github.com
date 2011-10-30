@@ -56,12 +56,12 @@ class Issue < ActiveRecord::Base
 end
 {% endhighlight %}
 <br /><br />But it kept failing, which was weird to me, because it seemed right.. it wasn't until I tried it from the development&nbsp;environment&nbsp;and checked out the logs that I saw what was happening..<br /><br />
-{% highlight %}
-  SQL (0.1ms)  BEGIN
-  Issue Load (0.1ms)  SELECT `issues`.* FROM `issues` WHERE (`issues`.`resolution` IS NULL) AND (`issues`.`description` = '') AND (`issues`.`name` = 'something') ORDER BY start_at DESC LIMIT 1
-  SQL (0.2ms)  SELECT COUNT(*) AS count_id FROM `comments`
-  SQL (18.6ms)  INSERT INTO `comments` (`body`, `commentable_id`, `commentable_type`, `created_at`, `updated_at`, `user_id`) VALUES ('Duplicate attempted to open', 3370, 'Issue', '2010-11-03 14:36:12', '2010-11-03 14:36:12', 1)
-  SQL (47.5ms)  ROLLBACK
+{% highlight text %}
+SQL (0.1ms)  BEGIN
+Issue Load (0.1ms)  SELECT `issues`.* FROM `issues` WHERE (`issues`.`resolution` IS NULL) AND (`issues`.`description` = '') AND (`issues`.`name` = 'something') ORDER BY start_at DESC LIMIT 1
+SQL (0.2ms)  SELECT COUNT(*) AS count_id FROM `comments`
+SQL (18.6ms)  INSERT INTO `comments` (`body`, `commentable_id`, `commentable_type`, `created_at`, `updated_at`, `user_id`) VALUES ('Duplicate attempted to open', 3370, 'Issue', '2010-11-03 14:36:12', '2010-11-03 14:36:12', 1)
+SQL (47.5ms)  ROLLBACK
 {% endhighlight %}
 <br /><br />The whole request was being wrapped in a transaction and being rolled back.. A little google searching later, I found <a href="http://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html">after_rollback</a>, and wrote a new callback<br /><br />
 {% highlight ruby %}
