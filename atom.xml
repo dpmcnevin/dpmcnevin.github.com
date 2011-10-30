@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>corrupt.net</title>
+  <link href="http://corrupt.net/"/>
+  <link type="application/atom+xml" rel="self" href="http://corrupt.net/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://corrupt.net/</id>
+  <author>
+    <name>Dan McNevin</name>
+    <email>dpmcnevin@gmail.com</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://corrupt.net{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://corrupt.net{{ post.url }}"/>
+    <title>{{ post.title }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Dan McNevin</name>
+      <uri>http://corrupt.net/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+ 
+</feed>
