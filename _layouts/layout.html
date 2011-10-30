@@ -6,13 +6,26 @@
     <meta name="author" content="Your Name" />
     <title>{{ page.title }}</title>
     <link rel="stylesheet" type="text/css" href="/css/source.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/application.css" />
   </head>
   <body>
     <header>
       <h1><a href="/">Dan McNevin</a></h1>
     </header>
-    <section>
-      {{ content }}
-    </section>
+    <div class="container-fluid">
+      <div class="sidebar">
+        <a href="http://github.com/dpmcnevin"><img src="/images/github_32.png"></a>
+        <a href="http://twitter.com/mental_thinking"><img src="/images/twitter_32.png"></a>
+        <a href="http://facebook.com/dpmcnevin"><img src="/images/facebook_32.png"></a>
+        <a href="http://www.linkedin.com/pub/daniel-mcnevin/5/96/655"
+><img src="/images/linkedin_32.png"></a>
+      </div>
+      <div class="content">
+        <section>
+          {{ content }}
+        </section>
+      </div>
+    </div>
   </body>
 </html>

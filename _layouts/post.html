@@ -4,7 +4,13 @@ layout: layout
 
 <div class="content">
   <div id="post">
-    <h1>{{ post.title }}</h1>
+    <h1 id="post-title">{{ page.title }}</h1>
+    <div id="tags">
+    {% for tag in page.categories %}
+      <span class="label">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <p /><p />
     {{ content }}
   </div>
 </div>
