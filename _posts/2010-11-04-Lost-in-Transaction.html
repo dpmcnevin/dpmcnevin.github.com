@@ -9,31 +9,30 @@ categories: rails3 callbacks transactions
 
 I am working on an issue tracking system at work. I built in an API so other systems can create events, but I wanted to make sure to minimize duplicate events, and opted to just add a comment in case the same issue was opened twice (or more.)<br /><br />I started with this test<br /><br />
 {% highlight ruby %}
-
-  context "don't allow duplicate issues" do
-    setup do
-      @issue = Issue.create(:name => "something", :start_at => "1/1/2010")
-    end
-    
-    should "not create a duplicate issue" do
-      assert_no_difference('Issue.count') do
-        another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
-      end
-    end
-    
-    should "create a new issue if the duplicate issue is closed" do
-      @issue.update_attributes(:resolution => "something")
-      assert_difference('Issue.count') do
-        another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
-      end
-    end
-    
-    should "add a comment on existing issue" do
-      assert_difference('@issue.comments.count') do
-        another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
-      end
+context "don't allow duplicate issues" do
+  setup do
+    @issue = Issue.create(:name => "something", :start_at => "1/1/2010")
+  end
+  
+  should "not create a duplicate issue" do
+    assert_no_difference('Issue.count') do
+      another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
     end
   end
+  
+  should "create a new issue if the duplicate issue is closed" do
+    @issue.update_attributes(:resolution => "something")
+    assert_difference('Issue.count') do
+      another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
+    end
+  end
+  
+  should "add a comment on existing issue" do
+    assert_difference('@issue.comments.count') do
+      another_issue = Issue.create(:name => "something", :start_at => "1/1/2010")
+    end
+  end
+end
 {% endhighlight %}
 <br /><br />Then wrote this code:<br /><br />
 {% highlight ruby %}
