@@ -4,7 +4,7 @@ layout: nil
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
-  <title>corrupt.net</title>
+  <title>Dan McNevin</title>
   <link href="http://corrupt.net/"/>
   <link type="application/atom+xml" rel="self" href="http://corrupt.net/atom.xml"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
