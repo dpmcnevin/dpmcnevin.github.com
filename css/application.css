@@ -1,5 +1,24 @@
 /* Global */
 
+header {
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 25px;
+  padding: 15px;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+
+header h1 a {
+  color: #555;
+}
+
+header h1 a:hover {
+  color: #555;
+}
+
 .content {
   width: 700px;
 }
