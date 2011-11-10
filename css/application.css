@@ -7,6 +7,10 @@ header {
   padding: 15px;
 }
 
+header #social-networks {
+  float: right;
+}
+
 header h1 {
   margin-bottom: 0;
 }
