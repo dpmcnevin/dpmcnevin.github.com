@@ -22,7 +22,8 @@ results can be achieved using any of their other SDKs.
   * You have a basic undertsanding of AWS
   * You already have an active AWS account
   * You have a keypair called `key-lab` located at `~/.ec2/key-lab.pem` (rename where appropriate)
-
+  * All commands are probably best done in `irb`, this way you can
+    inspect objects as you go along. Make sure to look at the [aws-sdk](http://rdoc.info/gems/aws-sdk/) docs.
 
 
 ### Creating the VPC
