@@ -128,7 +128,7 @@ Now you should be able to SSH to the server
   $ ssh -i ~/.ec2/key-test.pem ubuntu@ELASTIC_IP
 {% endhighlight %}
 
-We can use an SSH config file to make that easier.
+We can use an SSH config file (at `~/.ssh/config`) to make that easier.
 
 _note: You may want to consider adding a DNS CNAME entry for your
 elastic IP. This way, if it changes later, there's nothing that needs
@@ -172,7 +172,7 @@ be routable to the outside world.
 {% endhighlight %}
 
 With some ssh proxying magic, you can get to it through the ssh
-server that you've created.
+server that you've created by adding this to `~/.ssh/config`.
 
 {% highlight bash %}
 Host 10.0.1.*
