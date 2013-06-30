@@ -124,7 +124,7 @@ its' subnet and use its' security groups.
 Now you should be able to SSH to the server
 
 {% highlight bash %}
-  ssh -i ~/.ec2/key-test.pem ubuntu@ELASTIC_IP
+  $ ssh -i ~/.ec2/key-test.pem ubuntu@ELASTIC_IP
 {% endhighlight %}
 
 We can use an SSH config file to make that easier.
