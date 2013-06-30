@@ -24,7 +24,7 @@ header h1 a:hover {
 }
 
 .content {
-  width: 700px;
+  font-size: 16px;
 }
 
 /* Index Page */
@@ -45,6 +45,10 @@ header h1 a:hover {
 }
 
 /* Post Pages */
+
+#post h3 {
+  margin-top: 40px;
+}
 
 #post-title {
   margin-bottom: 0;
