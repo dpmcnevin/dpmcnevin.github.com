@@ -2,5 +2,6 @@ auto: true
 markdown: rdiscount
 permalink: /:year/:month/:day/:title
 pygments: true
+excerpt_separator: ""   # Workaround for http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed
 rdiscount:
   extensions: [smart]
