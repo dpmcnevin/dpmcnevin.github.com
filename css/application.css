@@ -11,6 +11,17 @@ header #social-networks {
   float: right;
 }
 
+header #social-networks a i {
+  color: black;
+  font-size: 30px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+header #social-networks a i:hover {
+  color: #0088cc;
+}
+
 header h1 {
   margin-bottom: 0;
 }
