@@ -5,14 +5,15 @@ title: Dan McNevin
 
 <div class="content">
   <div class="related">
-    <ul>
-      {% for post in site.posts %}
-      <li id="posts">
+    {% for post in site.posts %}
+    <div class="row post">
+      <div class="span2">
         <div class="post-date">{{ post.date | date: "%B %e, %Y" }}</div> 
+      </div>
+      <div class="span10">
         <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-      <br  />
-      {% endfor %}
-    </ul>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>

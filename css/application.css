@@ -40,8 +40,8 @@ header h1 a:hover {
 
 /* Index Page */
 
-#posts {
-  list-style: none;
+.post {
+  margin-bottom: 20px
 }
 
 .post-date {
