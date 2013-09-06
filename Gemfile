@@ -1,5 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem "jekyll"
-gem "rdiscount"
+gem "github-pages"
+# gem "jekyll"
+# gem "rdiscount"

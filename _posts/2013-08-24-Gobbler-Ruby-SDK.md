@@ -44,7 +44,7 @@ Installation is easy, just use the standard:
 
 Here is a screencast of some basic functions of the gem:
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/ROhJqBksov0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="//www.youtube.com/embed/ROhJqBksov0" frameborder="0" allowfullscreen="allowfullscreen">youtube video</iframe>
 
 
 ### Example Code
