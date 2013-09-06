@@ -7,12 +7,9 @@ title: Dan McNevin
   <div class="related">
     {% for post in site.posts %}
     <div class="row post">
-      <div class="span2">
-        <div class="post-date">{{ post.date | date: "%B %e, %Y" }}</div> 
-      </div>
-      <div class="span10">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </div>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <br />
+      <div class="post-date">{{ post.date | date: "%B %e, %Y" }}</div> 
     </div>
     {% endfor %}
   </div>

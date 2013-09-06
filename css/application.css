@@ -1,24 +1,13 @@
 /* Global */
 
-header {
-  background: #eee;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 25px;
-  padding: 15px;
-}
-
-header #social-networks {
-  float: right;
-}
-
-header #social-networks a i {
+.social-networks a i {
   color: black;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 15px;
   text-decoration: none;
 }
 
-header #social-networks a i:hover {
+.social-networks a i:hover {
   color: #0088cc;
 }
 
@@ -41,18 +30,16 @@ header h1 a:hover {
 /* Index Page */
 
 .post {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .post-date {
-  float: left;
-  padding-right: 13px;
-  text-align: right;
-  width: 150px;
+  color: #888;
+  font-size: 13px;
 }
 
 .post-link {
-  float: left;
 }
 
 /* Post Pages */
